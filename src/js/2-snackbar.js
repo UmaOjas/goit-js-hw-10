@@ -31,7 +31,7 @@ function handler(event) {
     .then((value) => iziToast.success({
         title: ' ',
         message: `${value}`,
-        iconUrl: okIcon,
+        iconUrl: '../img/ok.png',
         titleSize: '16px',
         titleLineHeight: '24px',
         messageColor: 'white',
@@ -47,7 +47,7 @@ function handler(event) {
     .catch((value) => iziToast.error({
         title: ' ',
         message: `${value}`,
-        iconUrl: errorIcon,
+        iconUrl: '../img/error.png',
         titleSize: '16px',
         titleLineHeight: '24px',
         messageColor: 'white',

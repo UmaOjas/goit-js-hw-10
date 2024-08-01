@@ -3,7 +3,7 @@ import glob from 'glob';
 import injectHTML from 'vite-plugin-html-inject';
 import FullReload from 'vite-plugin-full-reload';
 import svgLoader from 'vite-svg-loader';
-import vue from '@vitejs/plugin-vue';
+
 
 export default defineConfig(({ command }) => {
   return {
@@ -27,6 +27,6 @@ export default defineConfig(({ command }) => {
       },
       outDir: '../dist',
     },
-    plugins: [injectHTML(), FullReload(['./src/**/**.html']), vue(), svgLoader()],
+    plugins: [injectHTML(), FullReload(['./src/**/**.html']), svgLoader()],
   };
 });
