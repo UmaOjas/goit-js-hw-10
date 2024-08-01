@@ -3,7 +3,8 @@ import "flatpickr/dist/flatpickr.min.css";
 import iziToast from "izitoast";
 import "izitoast/dist/css/iziToast.min.css";
 import errorIcon from '../img/error.svg?url';
-console.log(errorIcon)
+// import sprite from "../img/spriteNew.svg";
+// console.log(errorIcon)
 
 
 
@@ -21,12 +22,6 @@ const options = {
     time_24hr: true,
     defaultDate: new Date(),
     minuteIncrement: 1,
-    onChange() {
-        const timerOnChenge = [...timer].map((el) => {
-            el.firstElementChild.textContent = "00";
-            clearInterval(intervalId);
-        });
-    },
     onClose(selectedDates) {
       userSelectedDate = selectedDates[0];
       if(userSelectedDate < new Date()) {
@@ -46,11 +41,12 @@ const options = {
                 messageColor: '#ffffff',
                 close: false,
                 position: 'topRight',
+                timeout: 500000,
             });
-            clearInterval(intervalId);
         btn.setAttribute("disabled", "true");
       } else {
         btn.removeAttribute("disabled");
+        input.setAttribute("disabled", "true")
       }
     },
   };
@@ -78,6 +74,7 @@ function handleClick(event) {
         if(isTimerDone) {
             clearInterval(intervalId);
             clearInterval(stopTimerId);
+            input.removeAttribute("disabled");
         }
     }, 1000);
     event.target.disabled = true;
