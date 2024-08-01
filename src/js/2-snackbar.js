@@ -1,7 +1,10 @@
 import iziToast from "izitoast";
 import "izitoast/dist/css/iziToast.min.css";
-import errorIcon from '../img/error.svg?url';
-import okIcon from '../img/ok.svg?url';
+// import errorIcon from '../img/error.svg?url';
+// import okIcon from '../img/ok.svg?url';
+import errorIcon from "../img/error.png";
+import okIcon from "../img/ok.png";
+
 
 const formEl = document.querySelector(".form");
 
@@ -31,7 +34,8 @@ function handler(event) {
     .then((value) => iziToast.success({
         title: ' ',
         message: `${value}`,
-        iconUrl: '../img/ok.png',
+        // iconUrl: '../img/ok.png',
+        iconUrl: okIcon,
         titleSize: '16px',
         titleLineHeight: '24px',
         messageColor: 'white',
@@ -47,7 +51,8 @@ function handler(event) {
     .catch((value) => iziToast.error({
         title: ' ',
         message: `${value}`,
-        iconUrl: '../img/error.png',
+        // iconUrl: '../img/error.png',
+        iconUrl: errorIcon,
         titleSize: '16px',
         titleLineHeight: '24px',
         messageColor: 'white',
