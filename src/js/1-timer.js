@@ -2,6 +2,8 @@ import flatpickr from "flatpickr";
 import "flatpickr/dist/flatpickr.min.css";
 import iziToast from "izitoast";
 import "izitoast/dist/css/iziToast.min.css";
+import errorIcon from '../img/error.svg?url';
+console.log(errorIcon)
 
 
 
@@ -31,7 +33,8 @@ const options = {
             iziToast.error({
                 title: ' ',
                 message: 'Please choose a date in the future',
-                iconUrl: '../img/error.svg',
+                // iconUrl: `${sprite}#icon-error`,
+                iconUrl: errorIcon,
                 titleSize: '16px',
                 titleLineHeight: '24px',
                 messageColor: 'white',
